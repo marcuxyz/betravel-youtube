@@ -36,7 +36,7 @@ python-dotenv==0.20.0; python_version >= "3.5"
 rich==12.5.1; python_full_version >= "3.7.8" and python_full_version < "4.0.0"
 shellingham==1.4.0; python_version >= "2.6" and python_version < "3.0" and python_full_version >= "3.7.8" and python_full_version < "4.0.0" or python_version > "3.0" and python_version < "3.1" and python_full_version >= "3.7.8" and python_full_version < "4.0.0" or python_version > "3.1" and python_version < "3.2" and python_full_version >= "3.7.8" and python_full_version < "4.0.0" or python_version > "3.2" and python_version < "3.3" and python_full_version >= "3.7.8" and python_full_version < "4.0.0" or python_full_version >= "3.7.8" and python_full_version < "4.0.0" and python_version > "3.3"
 six==1.16.0; python_full_version >= "3.7.8" and python_version >= "3.6" and python_full_version < "4.0.0"
-splinter==0.18.1
+splinter @ git+https://github.com/cobrateam/splinter.git@master
 sqlalchemy==1.4.39; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.7"
 tomli==2.0.1; python_full_version >= "3.7.8" and python_full_version < "3.11.0a7" and python_version >= "3.7"
 urllib3==1.26.11; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0" and python_version < "4")
