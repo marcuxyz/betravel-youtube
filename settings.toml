@@ -1,0 +1,8 @@
+[default]
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+[development]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///betravel.sqlite'
+
+[testing]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///'
