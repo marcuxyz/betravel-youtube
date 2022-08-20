@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Travel - Seu blog de viagens</title>
+</head>
+
+<body>
+
+  <main>
+    <h1>Olá, Marcus Pereira</h1>
+
+    {% for post in posts %}
+    <h4>
+      {{ post.title }}
+    </h4>
+    {% endfor %}
+  </main>
+
+</body>
+
+</html>
