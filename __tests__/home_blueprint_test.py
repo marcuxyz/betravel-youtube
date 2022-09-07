@@ -23,3 +23,10 @@ def _(browser=browser):
 
     assert browser.is_text_present('Curtindo as ferias em Salvador')
 
+
+@test('Visitante não consegue visualizar posts')
+def _(browser=browser):
+    browser.visit('/')
+
+    assert browser.is_text_present('Nenhum post cadastrado')
+
