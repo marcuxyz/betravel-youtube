@@ -21,6 +21,18 @@ def _(browser=browser):
     assert browser.is_text_present(post.title)
 
 
+@test('Visitante acessa a página principal e não ver posts não publicados')
+def _(browser=browser):
+    post = PostFactory.create(title='Curtindo as ferias em Salvador')
+    drafts = PostFactory.create_batch(2, published=False)
+
+    browser.visit(url_for('home.index'))
+
+    assert browser.is_text_present(post.title)
+    assert browser.is_text_not_present(drafts[0].title)
+    assert browser.is_text_not_present(drafts[1].title)
+
+
 @test('Visitante não consegue visualizar posts')
 def _(browser=browser):
     browser.visit(url_for('home.index'))
