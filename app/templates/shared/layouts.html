@@ -9,6 +9,11 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('categories.new') }}">Cadastrar categoria</a></li>
+    </ul>
+  </nav>
   <main>
     {% block content %} {% endblock %}
   </main>

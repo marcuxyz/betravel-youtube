@@ -1,4 +1,5 @@
 [default]
+SECRET_KEY = 'secret'
 SQLALCHEMY_TRACK_MODIFICATIONS = false
 EXTENSIONS = ['app.routes:init_app', 'app.extensions:init_app']
 
@@ -7,3 +8,4 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///betravel.sqlite'
 
 [testing]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///'
+WTF_CSRF_ENABLED = false

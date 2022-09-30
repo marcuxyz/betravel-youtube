@@ -1,0 +1,12 @@
+{% extends 'shared/layouts.html' %}
+
+
+{% block content %}
+
+<form action="{{ url_for('categories.create') }}" method="post">
+  {{ form.csrf_token }}
+  {{ form.name }}
+  {{ form.submit }}
+</form>
+
+{% endblock %}
