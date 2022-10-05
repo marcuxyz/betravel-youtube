@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, flash
 
 from app.models import Post
 from app.forms import PostForm
@@ -26,6 +26,8 @@ def create():
         published=form.published.data)
         db.session.add(post)
         db.session.commit()
+
+        flash('Post publicado com sucesso')
 
         return redirect(url_for('home.index'))
         

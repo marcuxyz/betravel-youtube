@@ -15,6 +15,15 @@
       <li><a href="{{ url_for('posts.new') }}">Cadastrar postagem</a></li>
     </ul>
   </nav>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in  messages %}
+        <p>{{ message }} </p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
   <main>
     {% block content %} {% endblock %}
   </main>
