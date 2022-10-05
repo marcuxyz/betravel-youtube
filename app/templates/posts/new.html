@@ -3,11 +3,13 @@
 
 {% block content %}
 
-<form action="{{ url_for('posts.create') }}" method="post">
+<form action="{{ url_for('posts.create') }}" method="post" enctype="multipart/form-data">
   {{ form.csrf_token }}
   {{ form.title }}
   {{ form.text }}
+  {{ form.categories }}
   {{ form.published }}
+  {{ form.image }}
   {{ form.submit }}
 </form>
 
