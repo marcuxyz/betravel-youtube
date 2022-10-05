@@ -3,6 +3,7 @@ from faker import Faker
 
 from app.extensions import db
 from app.models import Post
+from .category_factory import CategoryFactory
 
 faker = Faker()
 
@@ -15,3 +16,4 @@ class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
     title = faker.text()
     text = faker.paragraph()
     published = True
+    category = factory.SubFactory(CategoryFactory)
