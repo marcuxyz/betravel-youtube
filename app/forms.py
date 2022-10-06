@@ -1,11 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, SubmitField, BooleanField, SelectField, FileField
+from wtforms.fields import StringField, SubmitField, BooleanField, SelectField, FileField, TextAreaField
 
 from app.models import Category
 
 class PostForm(FlaskForm):
-    title = StringField('Nome')
-    text = StringField('Nome')
+    title = StringField('Título')
+    text = TextAreaField('Conteúdo')
     published = BooleanField('Publicar')
     categories = SelectField('Categorias', coerce=int)
     image = FileField('Imagem')

@@ -3,11 +3,25 @@
 
 {% block content %}
 
-<h1>Olá, Marcus Pereira</h1>
-
 {% if posts %}
   {% for post in posts %}
-  <a href="{{ url_for('posts.show', id=post.id) }}">{{ post.title }}</a> <br /><br /><br />
+    <section class="section margin-top-large">
+      <div class="container container-lg">
+        <h1>Viagens</h1>
+        <div class="row">
+          <div class="col-fill col">
+            <a href="{{ url_for('posts.show', id=post.id) }}" class="text-primary">
+              {% if post.image %}
+                <img src=" {{ url_for('media.upload', name=post.image ) }} " alt=" {{ post.title }} ">
+              {% endif %}
+              <h4 class="text-center">
+                {{ post.title }}
+              </h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   {% endfor %}
 {% else %}
   <h1>Nenhum post cadastrado</h1>

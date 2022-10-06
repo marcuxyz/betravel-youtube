@@ -21,6 +21,7 @@ def _(browser=browser):
 
     assert browser.url == url_for('home.index')
     assert browser.is_text_present('Post publicado com sucesso')
+    assert browser.is_element_present_by_css("img[src*='grecia.jpeg']")
     assert Post.query.first().title == 'Passando as ferias em Salvador-BA'
     assert Post.query.count() == 1
     assert Category.query.first() == Post.query.first().category
