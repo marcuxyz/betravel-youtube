@@ -1,5 +1,6 @@
 from ward import test
 from flask import url_for
+from __tests__.factories.category_factory import CategoryFactory
 
 from __tests__.factories.post_factory import PostFactory
 from __tests__.fixtures import browser
@@ -9,7 +10,7 @@ from __tests__.fixtures import browser
 def _(browser=browser):
     browser.visit(url_for('home.index'))    
 
-    assert browser.is_text_present('Olá, Marcus Pereira')
+    assert browser.is_text_present('Viagens')
 
 
 @test('Visitante acessa a página principal e vê posts')
@@ -22,13 +23,15 @@ def _(browser=browser):
 
 @test('Visitante ver post')
 def _(browser=browser):
-    post = PostFactory.create()
+    category = CategoryFactory.create(name='Brasil')
+    post = PostFactory.create(category=category)
 
     browser.visit(url_for('home.index'))
-    browser.links.find_by_text(post.title).click()
+    browser.links.find_by_partial_text(post.title).click()
 
     assert browser.is_text_present(post.title)
     assert browser.is_text_present(post.text)
+    assert browser.is_text_present(category.name)
 
 
 @test('Visitante acessa a página principal e não ver posts não publicados')
