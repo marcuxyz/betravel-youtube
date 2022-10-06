@@ -13,7 +13,7 @@ class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
         sqlalchemy_session = db.session
         sqlalchemy_session_persistence = "commit"
 
-    title = faker.text()
+    title = faker.name()
     text = faker.paragraph()
     published = True
     category = factory.SubFactory(CategoryFactory)

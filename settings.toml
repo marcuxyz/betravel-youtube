@@ -2,7 +2,7 @@
 SECRET_KEY = 'secret'
 SQLALCHEMY_TRACK_MODIFICATIONS = false
 UPLOAD_FOLDER = 'uploads'
-EXTENSIONS = ['app.routes:init_app', 'app.extensions:init_app']
+EXTENSIONS = ['app.extensions:init_app', 'mvc_flask:FlaskMVC']
 
 [development]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///betravel.sqlite'

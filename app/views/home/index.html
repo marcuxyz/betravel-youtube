@@ -15,7 +15,7 @@
         <div class="col-fill col text-center">
           <a href="{{ url_for('posts.show', id=post.id) }}" class="text-primary">
             {% if post.image %}
-              <img src=" {{ url_for('media.upload', name=post.image ) }} " class="margin-bottom-large" alt=" {{ post.title }} ">
+              <img src=" {{ url_for('medias.upload', name=post.image ) }} " class="margin-bottom-large" alt=" {{ post.title }} ">
             {% endif %}
             {{ post.title }}
           </a>
