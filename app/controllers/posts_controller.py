@@ -10,11 +10,11 @@ from app.extensions import db
 class PostsController:
     def show(self, id):
         post = Post.query.get(id)
-        return render_template('posts/show.html', post=post)
+        return render_template("posts/show.html", post=post)
 
     def new(self):
         form = PostForm()
-        return render_template('posts/new.html', form=form)
+        return render_template("posts/new.html", form=form)
 
     def create(self):
         form = PostForm()
@@ -22,16 +22,22 @@ class PostsController:
         if form.validate_on_submit():
             image = form.image.data
             filename = secure_filename(image.filename)
-            image.save(os.path.join(current_app.config["UPLOAD_FOLDER"], filename))
-            
-            post = Post(title=form.title.data, text=form.text.data,
-            published=form.published.data, category_id=form.categories.data, image=filename)
+            image.save(
+                os.path.join(current_app.config["UPLOAD_FOLDER"], filename)
+            )
+
+            post = Post(
+                title=form.title.data,
+                text=form.text.data,
+                published=form.published.data,
+                category_id=form.categories.data,
+                image=filename,
+            )
             db.session.add(post)
             db.session.commit()
 
-            flash('Post publicado com sucesso')
+            flash("Post publicado com sucesso")
 
-            return redirect(url_for('home.index'))
-            
+            return redirect(url_for("home.index"))
 
-        return render_template('posts/new.html', form=form)
+        return render_template("posts/new.html", form=form)

@@ -7,6 +7,7 @@ from .category_factory import CategoryFactory
 
 faker = Faker()
 
+
 class PostFactory(factory.alchemy.SQLAlchemyModelFactory):
     class Meta:
         model = Post

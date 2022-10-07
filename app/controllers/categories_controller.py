@@ -8,7 +8,7 @@ from app.models import Category
 class CategoriesController:
     def new(self):
         form = CategoryForm()
-        return render_template('categories/new.html', form=form)
+        return render_template("categories/new.html", form=form)
 
     def create(self):
         form = CategoryForm()
@@ -18,6 +18,6 @@ class CategoriesController:
             db.session.add(category)
             db.session.commit()
 
-            return redirect(url_for('home.index'))
+            return redirect(url_for("home.index"))
 
-        return render_template('categories/new.html', form=form)
+        return render_template("categories/new.html", form=form)
