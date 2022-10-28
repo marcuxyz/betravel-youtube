@@ -5,7 +5,7 @@ UPLOAD_FOLDER = 'uploads'
 EXTENSIONS = ['app.extensions:init_app', 'mvc_flask:FlaskMVC']
 
 [development]
-SQLALCHEMY_DATABASE_URI = 'sqlite:///betravel.sqlite'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@db/betravel_dev'
 
 [testing]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///'
